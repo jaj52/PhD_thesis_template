@@ -1,0 +1,37 @@
+\documentclass{Style/phdStyle}
+
+\newcommand*{\dt}[1]{%
+  \accentset{\mbox{\large\bfseries .}}{#1}}
+
+\begin{document}
+\sloppy
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\frontmatter
+\onehalfspacing
+\input{Frontmatter/Titlepage}
+\input{Frontmatter/Declaration}
+\input{Frontmatter/Acknowledgements}
+\input{Frontmatter/Dedication}
+\input{Frontmatter/Abstract}
+\input{Frontmatter/Abbreviations}
+\input{Frontmatter/Publications}
+%\input{Frontmatter/Symbols}
+\tableofcontents
+%\listoffigures
+
+\mainmatter
+\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
+\input{Chapters/introduction/intro}
+% and other sections ...
+\singlespacing
+
+\backmatter
+\addcontentsline{toc}{chapter}{References}
+%%%%%% run  >latex makebst in a terminal to make custom bst file
+\bibliographystyle{Bibliography/phd}
+\renewcommand{\bibname}{References}
+\bibliography{Bibliography/phd}
+
+\end{document} 
